@@ -1,6 +1,4 @@
-package collections.linkedlist;
-
-import java.util.Collections;
+package collections.linkedlistlottery;
 
 public class Play {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package collections.linkedlist;
+package collections.linkedlistlottery;
 
 public class LinkedLotteryList {
 
