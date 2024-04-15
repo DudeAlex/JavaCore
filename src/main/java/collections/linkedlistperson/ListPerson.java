@@ -1,5 +1,5 @@
 package collections.linkedlistperson;
-Task/*Doubly Linked List
+/*Doubly Linked List
         Implement a doubly linked list of person nodes. Create a class PersonNode and a class List for this purpose. The
          List class should know the start node of the list. Each person node should have attributes for age and last name,
          and it should know its predecessor and successor.
