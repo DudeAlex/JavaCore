@@ -91,4 +91,9 @@ public class ListPerson {
             System.out.println("---------");
         }
     }
+
+    public int search(String name){
+
+        return 0;
+    }
 }
