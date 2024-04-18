@@ -92,7 +92,16 @@ public class ListPerson {
         }
     }
 
-    public int search(String name){
+    public int searchByNameAndGetAge(String name){
+
+        if(name.isEmpty()) return 0;
+
+        PersonNode current = start;
+
+        while(current != null){
+            if(current.name.equals(name)) return current.age;
+            current = current.next;
+        }
 
         return 0;
     }
