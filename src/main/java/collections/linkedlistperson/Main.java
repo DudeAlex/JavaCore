@@ -15,5 +15,7 @@ public class Main {
         list.insert("Ddd", 9);
 
         list.display();
+
+        System.out.println(list.searchByNameAndGetAge("Ggg"));
     }
 }
