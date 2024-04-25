@@ -31,24 +31,39 @@ public class Baumen {
         }
     }
 
-    public String search(String wort){
+//    public String search(String wort){
+//        BaumenNode baumenNode = new BaumenNode(wort, null);
+//        return search(root, baumenNode);
+//    }
+//
+//    private String search(BaumenNode root, BaumenNode temp){
+//        if(root != null && root.getWort().equals(temp.getWort())){
+//            return temp.getBedeutung();
+//        }
+//        if(root.getWort().compareTo(temp.getWort()) < 0){
+//            return search(temp.right, temp);
+//        } else{
+//            return search(temp.left, temp);
+//        }
+//    }
+public String search(String wort){
+        if(root==null) return null;
+
         BaumenNode baumenNode = new BaumenNode(wort, null);
         return search(root, baumenNode);
-    }
+}
 
     private String search(BaumenNode root, BaumenNode temp){
         if(root != null && root.getWort().equals(temp.getWort())){
-            return temp.getBedeutung();
+            return root.getBedeutung();
         }
         if(root.getWort().compareTo(temp.getWort()) < 0){
-            return search(temp.right, temp);
+            return search(root.right, temp);
         } else{
-            return search(temp.left, temp);
+            return search(root.left, temp);
         }
     }
 }
-
-
 
 class BaumenNode {
     String wort;
