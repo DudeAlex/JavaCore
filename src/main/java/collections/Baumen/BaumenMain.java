@@ -5,13 +5,20 @@ public class BaumenMain {
 
         Baumen baumen = new Baumen();
 
-        BaumenNode k = new BaumenNode("Hello", "an expression or gesture of greeting");
+        BaumenNode h = new BaumenNode("Hello", "an expression or gesture of greeting");
+        baumen.einfugen(h);
+        BaumenNode w = new BaumenNode("World", "Place where we live");
+        baumen.einfugen(w);
+        BaumenNode a = new BaumenNode("Apelsin", "ApelsinFruit");
+        baumen.einfugen(a);
+        BaumenNode b = new BaumenNode("Banan", "BananFruit");
+        baumen.einfugen(b);
+        BaumenNode p = new BaumenNode("Paris", "City in France");
+        baumen.einfugen(p);
+        BaumenNode z = new BaumenNode("Zoo", "Place where animals live");
+        baumen.einfugen(z);
 
-        baumen.einfuegen(k);
-
-        BaumenNode l = new BaumenNode("World", "Place where we live");
-        baumen.einfuegen(l);
-
-        System.out.println(baumen);
+        baumen.display();
+        System.out.println(baumen.search("Apelsin"));
     }
 }
