@@ -63,6 +63,10 @@ public String search(String wort){
             return search(root.left, temp);
         }
     }
+
+    public void delete(){
+
+    }
 }
 
 class BaumenNode {
