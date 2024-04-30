@@ -19,6 +19,7 @@ public class BaumenMain {
         baumen.einfugen(z);
 
         baumen.display();
-        System.out.println(baumen.search("Apelsin"));
+        System.out.println(baumen.search("Zoo"));
+
     }
 }
