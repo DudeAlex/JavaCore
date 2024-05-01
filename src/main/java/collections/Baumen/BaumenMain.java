@@ -20,6 +20,5 @@ public class BaumenMain {
 
         baumen.display();
         System.out.println(baumen.search("Zoo"));
-
     }
 }
