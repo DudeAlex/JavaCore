@@ -4,7 +4,7 @@ public class BaumenMain {
     public static void main(String[] args) {
 
         Baumen baumen = new Baumen();
-
+        
         BaumenNode h = new BaumenNode("Hello", "an expression or gesture of greeting");
         baumen.einfugen(h);
         BaumenNode w = new BaumenNode("World", "Place where we live");
