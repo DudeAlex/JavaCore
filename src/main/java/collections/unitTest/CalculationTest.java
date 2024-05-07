@@ -13,6 +13,7 @@ public class CalculationTest {
 
     @Test
     public void firstBiggerSecondTest(){
+
         assertTrue(Calculation.firstBiggerSecond(3,1));
     }
 }
