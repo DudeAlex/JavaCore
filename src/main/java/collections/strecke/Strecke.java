@@ -8,8 +8,8 @@ public class Strecke {
     int a;
     int b;
 
-    public Strecke(int a, int b){
-        if(a<b) {
+    public Strecke(int a, int b) {
+        if (a < b) {
             this.a = a;
             this.b = b;
         } else {
@@ -17,11 +17,13 @@ public class Strecke {
             this.b = a;
         }
     }
-
-
-TestStrecke{
-    @Test
-    public void testStrecke(){
-        Strecke strecke = new Strecke(3,5);
-        assertEquals(3, strecke.a);
 }
+
+    class TestStrecke {
+        @Test
+        public void testStrecke() {
+            Strecke strecke = new Strecke(3, 5);
+            assertEquals(3, strecke.a);
+        }
+    }
+
