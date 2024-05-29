@@ -42,4 +42,8 @@ public class KugelvolumenUnitTest {
             assertEquals("radius must be positiv", errorMessage);
         }
     }
+    @Test
+    public void testMinusWert(){
+        assertEquals(113.09733552923254, Kugelvolumen.berechneKugelvolumen(3.0));
+    }
 }
