@@ -1,5 +1,4 @@
 package collections.interfaces;
 
-public interface Laufer {
-    public Brett gibErlaubteFelder();
+public interface Laufer extends Figur {
 }
