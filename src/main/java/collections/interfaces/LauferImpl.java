@@ -1,7 +1,11 @@
 package collections.interfaces;
 
-public class LauferImpl extends Figur implements Laufer {
+public class LauferImpl extends AbstrackFigur implements Laufer {
 
+
+    public LauferImpl(int x, int y) {
+        super(x, y);
+    }
 
     @Override
     public Brett gibErlaubteFelder() {

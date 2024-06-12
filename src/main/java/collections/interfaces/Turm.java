@@ -1,6 +1,4 @@
 package collections.interfaces;
 
-public interface Turm {
-
-    public Brett gibErlaubteFelder();
+public interface Turm extends Figur{
 }
