@@ -1,5 +1,8 @@
 package collections.interfaces.chess;
 
 public interface Figur {
-    public Brett gibErlaubteFelder();
+    Brett gibErlaubteFelder();
+
+    void setX(int x);
+    void setY(int y);
 }

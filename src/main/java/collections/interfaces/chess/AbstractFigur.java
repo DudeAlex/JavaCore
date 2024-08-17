@@ -4,7 +4,13 @@ public abstract class AbstractFigur implements Figur {
     int x;
     int y;
 
-    public int getX() {
+    public AbstractFigur(int x, int y) {
+        if(x >= 1 && x <= 8) this.x = x;
+        if(y >= 1 && y <= 8) this.y = y;
+    }
+
+
+        public int getX() {
         return x;
     }
     public void setX(int x) {
