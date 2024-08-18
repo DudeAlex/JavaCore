@@ -5,10 +5,9 @@ public abstract class AbstractFigur implements Figur {
     int y;
 
     public AbstractFigur(int x, int y) {
-        if(x >= 1 && x <= 8) this.x = x;
-        if(y >= 1 && y <= 8) this.y = y;
+        setX(x);
+        setY(y);
     }
-
 
         public int getX() {
         return x;
