@@ -12,9 +12,9 @@ public class Dame extends AbstractFigur implements Laufer, Turm {
 
         @Override
         public Brett gibErlaubteFelder() {
-            Brett brettLaeufer = laufer.gibErlaubteFelder();
+            Brett brettLaufer = laufer.gibErlaubteFelder();
             Brett brettTurm = turm.gibErlaubteFelder();
-            Brett kombiniertesBrett = brettTurm.kombiniere(brettLaeufer);
+            Brett kombiniertesBrett = brettTurm.kombiniere(brettLaufer);
             return kombiniertesBrett;
         }
         public static void main(String[] args) {
