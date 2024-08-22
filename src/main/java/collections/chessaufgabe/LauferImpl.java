@@ -8,10 +8,10 @@ public class LauferImpl extends AbstractFigur implements Laufer {
     public Brett gibErlaubteFelder() {
         Brett brett = new Brett();
         //TODO: Erg�nzen Sie den Algorithmus zur Bestimmung der Felder
-        for(int i = 1; getX() + i < 8 && getY() + 1 < 8; i++){
+        for(int i = 0; getX() + i <= 8 && getY() + i <= 8; i++){
             brett.markiereFeld(getX() + i, getY() + i);
         }
-        for(int i = 0; getX() - i >= 1 && getY() + 1 < 8; i++){
+        for(int i = 0; getX() - i >= 1 && getY() + i <= 8; i++){
             brett.markiereFeld(getX() - i, getY() + i);
         }
         for(int i = 0; getX() + i <= 8 && getY() - i >= 1; i++){
@@ -24,7 +24,7 @@ public class LauferImpl extends AbstractFigur implements Laufer {
     }
 
     public static void main(String[] args) {
-        LauferImpl l = new LauferImpl(4,5);
+        LauferImpl l = new LauferImpl(1,8);
         Brett brett = l.gibErlaubteFelder();
         for (int j = 1; j <= 8; j++) {
             for (int i = 1; i <= 8; i++) {
