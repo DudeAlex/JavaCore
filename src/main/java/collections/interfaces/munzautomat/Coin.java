@@ -6,8 +6,7 @@ public enum Coin {
 
     int value;
 
-    Coin(int value)
-    {
+    Coin(int value) {
         this.value = value;
     }
 }
