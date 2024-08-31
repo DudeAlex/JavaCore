@@ -9,12 +9,12 @@ import java.io.IOException;
 public class CopyFile {
     public static void main(String[] args) throws IOException {
         int i;
-        if (args.length != 1) {
+        /*if (args.length != 1) {
             System.out.println("Использование: ShowFile имя_файла");
             return;
-        }
-        try (FileInputStream fin = new FileInputStream(args[0]);
-             FileOutputStream fout = new FileOutputStream(args[1])) { //ВОПРОС: Что делает эта строка конкретно?
+        }*/
+        try (FileInputStream fin = new FileInputStream("testfileinput.txt");
+             FileOutputStream fout = new FileOutputStream("testfileoutput.txt")) { //ВОПРОС: Что делает эта строка конкретно?
             do {
                 i = fin.read();
                 if (i != -1) fout.write(i);
