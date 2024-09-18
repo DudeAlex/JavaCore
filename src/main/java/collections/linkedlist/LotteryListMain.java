@@ -9,6 +9,7 @@ public class LotteryListMain {
         lotteryList.add(22);
         lotteryList.add(10);
         lotteryList.add(49);
+        lotteryList.add(32);
 
         System.out.println(lotteryList);
 

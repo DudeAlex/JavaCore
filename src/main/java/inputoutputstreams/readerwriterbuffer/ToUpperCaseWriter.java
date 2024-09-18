@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-public class ToUpperCaseWriter {
+public class ToUpperCaseWriter implements AutoCloseable{
     Writer writer;
     public ToUpperCaseWriter(Writer writer) {
         this.writer = writer;
