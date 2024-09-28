@@ -1,9 +1,12 @@
-package hausaufgabe.lektion17.zeitmessung.ungepufferten;
+package hausaufgabe.lektion17.zeitmessung;
 
 import java.io.*;
 
-public class GepuffertenStream {
+public class ByteUngepuffertenStream {
     public static void main(String[] args) {
+
+        byte[] buffer = new byte[120];
+        int bytesRead;
 
         long startTime;
         long endTime;
@@ -11,14 +14,13 @@ public class GepuffertenStream {
 
         int i;
 
-        try (BufferedInputStream bin = new BufferedInputStream(new FileInputStream("musikinput.mp3"));
-             BufferedOutputStream bout = new BufferedOutputStream(new FileOutputStream("musikotput.mp3"))) {
+        try (FileInputStream fin = new FileInputStream("musikinput.mp3");
+             FileOutputStream fout = new FileOutputStream("musikotput.mp3")) {
 
             startTime = System.currentTimeMillis();
-            do {
-                i = bin.read();
-                if (i != -1) bout.write(i);
-            } while (i != -1);
+            while((bytesRead = fin.read(buffer)) != -1) {
+                fout.write(buffer, 0, bytesRead);
+            }
 
             endTime = System.currentTimeMillis();
             duration = endTime - startTime;
@@ -26,8 +28,10 @@ public class GepuffertenStream {
             System.out.println("Начало времени: " + startTime);
             System.out.println("Конец времени: " + endTime);
             System.out.println("Итоговое время обработки: " + duration + " миллисекунд");
-            } catch (IOException e){
+        } catch (IOException e){
             System.out.println("Ошибка ввода-вывода: " + e);
         }
+
+
     }
 }
