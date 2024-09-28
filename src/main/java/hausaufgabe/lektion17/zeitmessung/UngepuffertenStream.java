@@ -1,4 +1,4 @@
-package hausaufgabe.lektion17.zeitmessung.ungepufferten;
+package hausaufgabe.lektion17.zeitmessung;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
