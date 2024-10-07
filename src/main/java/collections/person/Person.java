@@ -7,7 +7,7 @@ public class Person {
 
     public Person(String vorname, String nachname, Adresse adresse) {
         if (!Character.isUpperCase(vorname.charAt(0)))
-            throw new RuntimeException("Имя должно начинаться с большой буквы");
+            throw new RuntimeException("Name muss mit Großbuchstabe starten");
 
         this.vorname = vorname;
         this.nachname = nachname;

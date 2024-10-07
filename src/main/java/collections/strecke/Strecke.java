@@ -26,8 +26,8 @@ public class Strecke {
      соприкасающиеся в одной точке, не являются пересечением!
      */
 
-    public boolean compare(Strecke out){
-        if(this.a > out.b || this.b < out.a) return false;
+    public boolean compare(Strecke out) {
+        if (this.a >= out.b || this.b <= out.a) return false;
         return true;
     }
 
@@ -73,6 +73,27 @@ public class Strecke {
             Strecke strecke = new Strecke(4,4);
             System.out.println(strecke.toString());
         }
+        @Test
+        public void testCompareOverlap() {
+            Strecke strecke = new Strecke(3, 7);
+            Strecke out = new Strecke(5, 9);
+            assertTrue(strecke.compare(out)); // Частичное пересечение
+        }
+
+        @Test
+        public void testCompareTouching() {
+            Strecke strecke = new Strecke(3, 5);
+            Strecke out = new Strecke(5, 7);
+            assertFalse(strecke.compare(out)); // Соприкосновение, но не пересечение
+        }
+
+        @Test
+        public void testCompareFullOverlap() {
+            Strecke strecke = new Strecke(3, 7);
+            Strecke out = new Strecke(3, 7);
+            assertTrue(strecke.compare(out)); // Полное перекрытие
+        }
+
     }
 
 

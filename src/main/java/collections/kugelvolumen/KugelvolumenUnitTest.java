@@ -24,23 +24,31 @@ public class KugelvolumenUnitTest {
 
     @Test
     public void testVergleichenWith5(){
-        assertEquals(4.1887902047863905, Kugelvolumen.berechneKugelvolumen(1.0));
+        assertEquals(523.5987755982989, Kugelvolumen.berechneKugelvolumen(5.0));
     }
 
     @Test
     public void testVergleichenWithMinus1(){
+
         try {
+            Kugelvolumen.berechneKugelvolumen(-1.0); // Передаем отрицательный радиус
+            fail("Es sollte eine Ausnahme geworfen werden, wenn der Radius negativ ist"); // Тест проваливается, если исключение не выброшено
+        } catch (Exception e) {
+            String errorMessage = e.getMessage(); // Получаем сообщение об ошибке из исключения
+            assertEquals("radius must be positiv", errorMessage); // Проверяем, что сообщение соответствует ожидаемому
+        }
+        /*try {
             Kugelvolumen.berechneKugelvolumen(-1.0);
             int number = 5;
             System.out.println("I'm here");
             number = number/0;
             System.out.println("Hello world!");
-            fail("В методе есть ошибка");
+            fail("Es gibt ein Fehler");
         }
         catch (Exception e){
             String errorMessage = e.getMessage();
             assertEquals("radius must be positiv", errorMessage);
-        }
+        }*/
     }
     @Test
     public void testMinusWert(){
