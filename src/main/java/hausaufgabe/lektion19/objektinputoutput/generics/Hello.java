@@ -9,5 +9,4 @@ public class Hello <E> {
     public void greeting(){
         System.out.println(e.toString());
     }
-
 }
