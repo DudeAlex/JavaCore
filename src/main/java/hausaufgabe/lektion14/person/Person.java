@@ -1,4 +1,4 @@
-package collections.person;
+package hausaufgabe.lektion14.person;
 
 public class Person {
     String vorname;
@@ -7,7 +7,7 @@ public class Person {
 
     public Person(String vorname, String nachname, Adresse adresse) {
         if (!Character.isUpperCase(vorname.charAt(0)))
-            throw new RuntimeException("Name muss mit Großbuchstabe starten");
+            throw new RuntimeException("Vorname muss mit Großbuchstabe starten");
 
         this.vorname = vorname;
         this.nachname = nachname;

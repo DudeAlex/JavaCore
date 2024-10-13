@@ -1,6 +1,4 @@
-package collections.kugelvolumen;
-
-import javax.crypto.spec.DESedeKeySpec;
+package hausaufgabe.lektion14.kugelvolumen;
 
 public class Kugelvolumen {
     //double radius;

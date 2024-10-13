@@ -1,6 +1,6 @@
-package collections.kugelvolumen;
+package hausaufgabe.lektion14.kugelvolumen;
 
-import collections.unitTest.CalculationTest;
+import hausaufgabe.lektion14.kugelvolumen.Kugelvolumen;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,7 +1,7 @@
 
 
 
-package collections.strecke;
+package hausaufgabe.lektion14.strecke;
 
 import org.junit.jupiter.api.Test;
 
@@ -93,7 +93,6 @@ public class Strecke {
             Strecke out = new Strecke(3, 7);
             assertTrue(strecke.compare(out)); // Полное перекрытие
         }
-
     }
 
 
