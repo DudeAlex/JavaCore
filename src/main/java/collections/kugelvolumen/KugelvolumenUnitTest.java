@@ -7,51 +7,43 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class KugelvolumenUnitTest {
+    final double DELTA = 0.00001;
+
     @Test
     public void testVergleichen(){
-        assertEquals(113.09733552923254, Kugelvolumen.berechneKugelvolumen(3.0));
+        Kugelvolumen kugelvolumen = new Kugelvolumen();
+        assertEquals(113.09733552923254, kugelvolumen.berechneKugelvolumen(3.0), DELTA);
     }
+
 
     @Test
     public void testVergleichenWith0(){
-        assertEquals(0.0, Kugelvolumen.berechneKugelvolumen(0.0));
+        Kugelvolumen kugelvolumen = new Kugelvolumen();
+        assertEquals(0.0, kugelvolumen.berechneKugelvolumen(0.0), DELTA);
     }
 
     @Test
     public void testVergleichenWith1(){
-        assertEquals(4.1887902047863905, Kugelvolumen.berechneKugelvolumen(1.0));
+        Kugelvolumen kugelvolumen = new Kugelvolumen();
+        assertEquals(4.1887902047863905, kugelvolumen.berechneKugelvolumen(1.0), DELTA);
     }
 
     @Test
     public void testVergleichenWith5(){
-        assertEquals(523.5987755982989, Kugelvolumen.berechneKugelvolumen(5.0));
+        Kugelvolumen kugelvolumen = new Kugelvolumen();
+        assertEquals(523.5987755982989, kugelvolumen.berechneKugelvolumen(5.0), DELTA);
     }
 
     @Test
     public void testVergleichenWithMinus1(){
 
         try {
-            Kugelvolumen.berechneKugelvolumen(-1.0); // Передаем отрицательный радиус
-            fail("Es sollte eine Ausnahme geworfen werden, wenn der Radius negativ ist"); // Тест проваливается, если исключение не выброшено
+            Kugelvolumen kugelvolumen = new Kugelvolumen();
+            kugelvolumen.berechneKugelvolumen(-1.0);
+            fail("radius must be positiv");
         } catch (Exception e) {
             String errorMessage = e.getMessage(); // Получаем сообщение об ошибке из исключения
             assertEquals("radius must be positiv", errorMessage); // Проверяем, что сообщение соответствует ожидаемому
         }
-        /*try {
-            Kugelvolumen.berechneKugelvolumen(-1.0);
-            int number = 5;
-            System.out.println("I'm here");
-            number = number/0;
-            System.out.println("Hello world!");
-            fail("Es gibt ein Fehler");
-        }
-        catch (Exception e){
-            String errorMessage = e.getMessage();
-            assertEquals("radius must be positiv", errorMessage);
-        }*/
-    }
-    @Test
-    public void testMinusWert(){
-        assertEquals(113.09733552923254, Kugelvolumen.berechneKugelvolumen(3.0));
     }
 }
