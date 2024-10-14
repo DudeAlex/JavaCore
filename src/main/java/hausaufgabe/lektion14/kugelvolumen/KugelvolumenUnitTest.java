@@ -42,8 +42,8 @@ public class KugelvolumenUnitTest {
             kugelvolumen.berechneKugelvolumen(-1.0);
             fail("radius must be positiv");
         } catch (Exception e) {
-            String errorMessage = e.getMessage(); // Получаем сообщение об ошибке из исключения
-            assertEquals("radius must be positiv", errorMessage); // Проверяем, что сообщение соответствует ожидаемому
+            //String errorMessage = e.getMessage(); // Получаем сообщение об ошибке из исключения
+            assertEquals("radius must be positiv", e.getMessage()); // Проверяем, что сообщение соответствует ожидаемому
         }
     }
 }
