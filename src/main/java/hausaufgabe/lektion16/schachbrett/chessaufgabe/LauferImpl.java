@@ -1,4 +1,4 @@
-package collections.chessaufgabe;
+package hausaufgabe.lektion16.schachbrett.chessaufgabe;
 
 public class LauferImpl extends AbstractFigur implements Laufer {
     public LauferImpl(int x, int y) {

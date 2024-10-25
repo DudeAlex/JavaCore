@@ -1,4 +1,4 @@
-package collections.chessaufgabe;
+package hausaufgabe.lektion16.schachbrett.chessaufgabe;
 
 public class Brett {
     boolean[][] brett = new boolean[8][8];
