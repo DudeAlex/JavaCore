@@ -1,4 +1,4 @@
-package collections.chessaufgabe;
+package hausaufgabe.lektion16.schachbrett.chessaufgabe;
 
 public class TurmImpl extends AbstractFigur implements Turm{
     public TurmImpl(int x, int y)

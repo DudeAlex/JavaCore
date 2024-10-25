@@ -1,4 +1,4 @@
-package collections.chessaufgabe;
+package hausaufgabe.lektion16.schachbrett.chessaufgabe;
 
 public class Dame extends AbstractFigur implements Laufer, Turm {
         Laufer laufer;

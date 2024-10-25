@@ -1,4 +1,4 @@
-package collections.chessaufgabe;
+package hausaufgabe.lektion16.schachbrett.chessaufgabe;
 
 public abstract class AbstractFigur implements Figur{
     int x;
