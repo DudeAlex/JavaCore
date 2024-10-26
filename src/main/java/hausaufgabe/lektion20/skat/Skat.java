@@ -8,8 +8,11 @@ public class Skat implements Comparable {
     private String name;
     private String type;
 
-    private final List<String> cardNamesList = List.of("Valet,", "Ass", "10", "König", "Dame", "9", "8", "7");
+
+
+    private final List<String> cardNamesList = List.of("Valet", "Ass", "10", "König", "Dame", "9", "8", "7");
     private final List<String> cardTypeList = List.of("Tref", "Pik", "Herz", "Karo");
+
 
     public Skat(String name, String type) {
         this.name = name;
@@ -50,31 +53,25 @@ public class Skat implements Comparable {
         throw new RuntimeException("Нет такой масти");
     }
 
-
     @Override
     public int compareTo(Object ob) {
-        /*if(!(o instanceof Skat)) {
-            o = (Skat) o;
-        } else */
-
         Skat o = (Skat) ob;
 
-        if (this.getName().equals(o.getName())) {
-            if (this.getType().equals(o.getType())) return 0;
-        } else {
-            if (getCardTypePosition(this) > getCardTypePosition(o)) {
-                return -1;
-            } else {
-                return 1;
-            }
-        }
-        if (getNamePostion(this) > getNamePostion(o)) {
+        // Сначала сравниваем позиции по имени (ранг карты)
+        int thisNamePosition = getNamePostion(this);
+        int otherNamePosition = getNamePostion(o);
 
-            return -1;
-        } else {
-            return 1;
+        if (thisNamePosition != otherNamePosition) {
+            return Integer.compare(thisNamePosition, otherNamePosition);
         }
+
+        // Если ранг карты одинаковый, сравниваем по масти
+        int thisTypePosition = getCardTypePosition(this);
+        int otherTypePosition = getCardTypePosition(o);
+
+        return Integer.compare(thisTypePosition, otherTypePosition);
     }
+
 
     @Override
     public String toString() {
@@ -83,4 +80,10 @@ public class Skat implements Comparable {
                 ", type='" + type + '\'' +
                 '}';
     }
+
+
+
+
+
+
 }
