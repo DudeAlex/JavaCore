@@ -1,5 +1,7 @@
 package hausaufgabe.lektion20.skat;
 
+import hausaufgabe.lektion20.skat.kartenspiel.Spieler;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -7,9 +9,9 @@ import java.util.List;
 public class SkatMain {
     public static void main(String[] args) {
 
+        //то что закоментено - это для второй задачи. Это НЕ неправильно
 
-
-        Skat skat1 = new Skat("Valet", "Pik");
+        /*Skat skat1 = new Skat("Valet", "Pik");
         Skat skat2 = new Skat("König", "Tref");
         Skat skat3 = new Skat("10", "Herz");
         Skat skat4 = new Skat("Ass", "Karo");
@@ -27,7 +29,19 @@ public class SkatMain {
 
         for(Skat skat : skats){
             System.out.println(skat);
-        }
+        }*/
+
+        Spieler spieler = new Spieler("Ivan");
+        spieler.printCards();
+        System.out.println();
+        List<Skat> cards = spieler.getCards();
+        Collections.sort(cards);
+        spieler.printCards();
+        System.out.println();
+
+
+        //cards.add(new Skat("sdgs", "sgsg"));
+        //spieler.printCards();
 
     }
 }
