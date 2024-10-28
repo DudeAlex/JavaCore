@@ -3,7 +3,7 @@ package hausaufgabe.lektion16.schachbrett.chessaufgabe.stack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stack extends ArrayList <Object>{
+public class Stack extends ArrayList {
 
     public boolean push(Object o){
         return this.add(o);
