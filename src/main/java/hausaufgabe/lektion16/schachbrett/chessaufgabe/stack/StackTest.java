@@ -2,8 +2,7 @@ package hausaufgabe.lektion16.schachbrett.chessaufgabe.stack;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StackTest {
 
@@ -12,6 +11,18 @@ public class StackTest {
         StackNichtErbt stack = new StackNichtErbt();
         assertTrue(stack.push(1));
     }
+    @Test
+    public void testStack(){
+        StackNichtErbt stackNichtErbt = new StackNichtErbt();
+        try{
+            stackNichtErbt.pop();
+            fail("Es wird ein Exception erwartet");
+        } catch (RuntimeException e){
+            assertEquals("Stack ist leer", e.getMessage());
+        }
+    }
+
+
 
     @Test
     public void testPop(){
@@ -21,7 +32,5 @@ public class StackTest {
         assertEquals(2, stack.pop());
         assertEquals(1, stack.pop());
     }
-
-
 
 }

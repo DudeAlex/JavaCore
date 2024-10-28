@@ -10,12 +10,12 @@ public class ChangeCalculatorUpdate implements ChangeCalculator {
         // Жадный алгоритм размена, начиная с самой крупной монеты
         for (int i = Coin.values().length - 1; i >= 0; i--) {
             Coin coin = Coin.values()[i];
-            coins[i] = totalCents / coin.value; // Количество монет данного номинала
-            totalCents %= coin.value; // Оставшаяся сумма после размена
+            coins[i] = totalCents / coin.value; // Количество монет данного номинала - Anzahl der Münzen
+            totalCents %= coin.value; // Оставшаяся сумма после размена - Betrag nach Umtausch
 
             // Отладочный вывод
-            System.out.println("Coin value: " + coin.value + " - Number of coins: " + coins[i]);
-            System.out.println("Remaining cents: " + totalCents);
+            //System.out.println("Coin value: " + coin.value + " - Number of coins: " + coins[i]);
+            //System.out.println("Remaining cents: " + totalCents);
         }
 
         return coins; // Возвращаем массив с количеством каждой монеты
