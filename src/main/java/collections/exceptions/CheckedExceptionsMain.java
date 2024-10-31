@@ -13,6 +13,4 @@ public class CheckedExceptionsMain {
     public static int getNumber() throws IOException {
         return System.in.read();
     }
-
-
 }
