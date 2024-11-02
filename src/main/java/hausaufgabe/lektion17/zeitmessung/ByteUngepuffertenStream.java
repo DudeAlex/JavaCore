@@ -3,6 +3,21 @@ package hausaufgabe.lektion17.zeitmessung;
 import java.io.*;
 
 public class ByteUngepuffertenStream {
+
+    public static void main(String[] args) {
+
+    }
+
+
+
+
+
+
+
+
+
+
+    /*
     public static void main(String[] args) {
 
         byte[] buffer = new byte[120];
@@ -33,5 +48,5 @@ public class ByteUngepuffertenStream {
         }
 
 
-    }
+    }*/
 }

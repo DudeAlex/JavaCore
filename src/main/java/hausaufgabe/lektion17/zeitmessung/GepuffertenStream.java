@@ -3,6 +3,14 @@ package hausaufgabe.lektion17.zeitmessung;
 import java.io.*;
 
 public class GepuffertenStream {
+
+
+
+
+
+
+
+    /*
     public static void main(String[] args) {
 
         long startTime;
@@ -29,5 +37,5 @@ public class GepuffertenStream {
             } catch (IOException e){
             System.out.println("Ошибка ввода-вывода: " + e);
         }
-    }
+    }*/
 }
