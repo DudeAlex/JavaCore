@@ -1,4 +1,4 @@
-package collections.exceptions.exceptionsaufgabe;
+package hausaufgabe.lektion17.exceptionsaufgabe;
 
 public class NumberFormatExceptionMain {
     public static void main(String[] args) {

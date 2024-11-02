@@ -1,7 +1,4 @@
-package collections.exceptions.exceptionsaufgabe;
-
-import java.util.ArrayList;
-import java.util.List;
+package hausaufgabe.lektion17.exceptionsaufgabe;
 
 public class OutOfMemoryErrorMain {
     public static void main(String[] args) {
