@@ -3,11 +3,80 @@ package hausaufgabe.lektion17.exceptions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 public class WertebereicheTest {
 
+    @Test
+    public void arrayNullTest(){
+        Wertebereiche wertebereiche = new Wertebereiche();
+        //byte[] data = null;
+
+        try{
+            wertebereiche.write(null, 0, 2);
+            fail("NullPointerException expected");
+        } catch (NullPointerException e){
+        } catch (IOException e){
+            fail(e);
+        }
+    }
+
+    @Test
+    public void offMinusEinsTest(){
+        Wertebereiche wertebereiche = new Wertebereiche();
+        byte[] data = {1,2,3,4,5,6,7};
+
+        try{
+            wertebereiche.write(data, -1,3);
+        } catch (IndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+        } catch (IOException e){
+            fail(e);
+        }
+    }
+
+    @Test
+    public void summeGroßeAlsLengthTest(){
+        Wertebereiche wertebereiche = new Wertebereiche();
+        byte[] data = {1,2,3,4,5,6};
+        try{
+            wertebereiche.write(data, 2,8);
+        } catch (IndexOutOfBoundsException e){
+            System.out.println(e.getMessage());
+        } catch (IOException e){
+            fail(e);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     String data;
     @BeforeEach
     public void setUp() {
@@ -46,5 +115,5 @@ public class WertebereicheTest {
         int length = 10;
 
         writeToFile(data, offset, length);
-    }
+    }*/
 }

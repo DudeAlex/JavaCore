@@ -1,4 +1,4 @@
-package collections.exceptions.exceptionsaufgabe;
+package hausaufgabe.lektion17.exceptionsaufgabe;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

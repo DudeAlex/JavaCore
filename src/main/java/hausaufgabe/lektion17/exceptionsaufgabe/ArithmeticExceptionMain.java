@@ -1,4 +1,4 @@
-package collections.exceptions.exceptionsaufgabe;
+package hausaufgabe.lektion17.exceptionsaufgabe;
 
 public class ArithmeticExceptionMain {
     public static void main(String[] args) {
