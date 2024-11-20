@@ -33,21 +33,21 @@ class IllegalTelephoneNumberException extends Exception {
 }
 
 class TelephoneMap {
-    static final Map<String, Integer> telephone = new HashMap<>();
+    static final Map<String, Character> telephone = new HashMap<>();
      static{
-        telephone.put("ABC", 2);
-        telephone.put("DEF", 3);
-        telephone.put("GHI", 4);
-        telephone.put("JKL", 5);
-        telephone.put("MNO", 6);
-        telephone.put("PQRS", 7);
-        telephone.put("TUV", 8);
-        telephone.put("WXYZ", 9);
+        telephone.put("ABC", '2');
+        telephone.put("DEF", '3');
+        telephone.put("GHI", '4');
+        telephone.put("JKL", '5');
+        telephone.put("MNO", '6');
+        telephone.put("PQRS", '7');
+        telephone.put("TUV", '8');
+        telephone.put("WXYZ", '9');
     }
     public static int convert(int i) throws IllegalTelephoneNumberException {
         char ch = (char) i;
-        for(Map.Entry<String, Integer> entry : telephone.entrySet()) {
-            if(entry.getKey().contains(Character.toString(ch)))  return entry.getValue() + 48;
+        for(Map.Entry<String, Character> entry : telephone.entrySet()) {
+            if(entry.getKey().contains(Character.toString(ch)))  return entry.getValue();
         }
         throw new IllegalTelephoneNumberException();
     }
