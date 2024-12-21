@@ -18,7 +18,7 @@ public class Motiv {
     public static void printMotiv(){
         for(int i = 0; i < motiv.length; i++){
             for(int j = 0; j < motiv[i].length; j++){
-                if(motiv[i][j] == false) {
+                if(!motiv[i][j]) {
                     System.out.print(". ");
                 } else {
                     System.out.print("* ");

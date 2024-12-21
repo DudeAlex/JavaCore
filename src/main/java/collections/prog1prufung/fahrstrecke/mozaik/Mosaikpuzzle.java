@@ -17,8 +17,8 @@ public class Mosaikpuzzle {
         for (int i = x - 1; i <= x + 1; i++) {
             for (int j = y - 1; j <= y + 1; j++) {
                 try {
-                    if (motiv[i][j] == true) sum++;
-                } catch (Exception e) {
+                    if (motiv[i][j]) sum++;
+                } catch (Exception ignored) {
                 }
             }
         }
