@@ -13,12 +13,12 @@ public class MozaikMain {
 
         System.out.println();
 
-        System.out.println(mosaikpuzzle.ermittleZahl(3, 3));
-        System.out.println(mosaikpuzzle.ermittleZahl(7, 6));
-        System.out.println(mosaikpuzzle.ermittleZahl(0, 2));
-        System.out.println(mosaikpuzzle.ermittleZahl(9,7));
+        //System.out.println(mosaikpuzzle.ermittleZahl(6, 5));
+        //System.out.println(mosaikpuzzle.ermittleZahl(7, 6));
+        //System.out.println(mosaikpuzzle.ermittleZahl(0, 2));
+        //System.out.println(mosaikpuzzle.ermittleZahl(9,7));
 
-        System.out.println();
+        //System.out.println();
 
         mosaikpuzzle.printZifferMatrix();
     }

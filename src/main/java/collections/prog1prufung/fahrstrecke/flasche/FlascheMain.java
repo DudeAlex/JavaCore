@@ -5,6 +5,8 @@ public class FlascheMain {
 
         Flasche flasche = new Flasche("Wein", "trocken", 450);
         int ml = 130;
+        System.out.println(flasche.reduziereFuellstand(ml) + " ml entnommen");
+
 
         while(!flasche.istLeer()){
             flasche.reduziereFuellstand(ml);
