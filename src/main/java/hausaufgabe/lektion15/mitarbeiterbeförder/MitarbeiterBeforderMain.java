@@ -1,7 +1,5 @@
 package hausaufgabe.lektion15.mitarbeiterbeförder;
 
-import hausaufgabe.lektion21.nährstoffangaben.Nahrstoffangaben;
-
 public class MitarbeiterBeforderMain {
     public static void main(String[] args) {
 

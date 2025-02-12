@@ -1,4 +1,4 @@
-package hausaufgabe.lektion21.nährstoffangaben.binarbaum;
+package hausaufgabe.lektion21.binarbaum;
 
 public class Binarbaum {
 
