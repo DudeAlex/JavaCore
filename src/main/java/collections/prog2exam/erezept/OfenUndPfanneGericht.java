@@ -6,8 +6,8 @@ public class OfenUndPfanneGericht extends OfenGericht{
 
     PfanneGericht pfanneGericht;
 
-    public OfenUndPfanneGericht(PfanneGericht pfanneGericht, List<Zutat> zutaten, String name, int menge, double sandigrad, OfenGericht ofenGericht) throws  FalsheGerichException{
-        super(zutaten, name, menge, sandigrad, ofenGericht);
+    public OfenUndPfanneGericht(PfanneGericht pfanneGericht, List<Zutat> zutaten, String name, int menge, double sandigrad, Ofeneinstellung ofeneinstellung) throws  FalsheGerichException{
+        super(zutaten, name, menge, sandigrad, ofeneinstellung);
         this.pfanneGericht = pfanneGericht;
     }
 

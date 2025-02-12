@@ -1,5 +1,7 @@
 package hausaufgabe.lektion21.nährstoffangaben;
 
+import hausaufgabe.lektion21.nährstoffangaben.Nahrstoffangaben;
+
 public class Nahrstoffangabenmain {
     public static void main(String[] args) {
 
