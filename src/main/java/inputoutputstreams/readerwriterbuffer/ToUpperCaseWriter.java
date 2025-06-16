@@ -25,7 +25,7 @@ public class ToUpperCaseWriter implements AutoCloseable{
         for(int i = 0; i < str.length(); i++)
             write(str.charAt(i));
     }
-    //alle (relevanten) Methoden von Writer überschreiben
+    //alle (relevanten) Methoden von WriterMain überschreiben
     public void flush() throws IOException {
         writer.flush();
     }
