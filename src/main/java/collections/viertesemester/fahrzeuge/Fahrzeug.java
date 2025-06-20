@@ -4,19 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Fahrzeug {
-    protected List<Fahrt> fahrten = new ArrayList<>();
 
-    public abstract double rechneFahrt(Fahrt fahrt);
+    List<Fahrt> fahrtList = new ArrayList<>();
 
-    public abstract String schreibeFahrt();
+    public abstract double berechnen(Fahrt fahrt);
 
-    public void fuegeFahrtHinzu(Fahrt fahrt) {
-        fahrten.add(fahrt);
-    }
-
-    public List<Fahrt> getFahrten() {
-        return fahrten;
-    }
-
+    public abstract void hinzufugen(Fahrt fahrt);
 
 }

@@ -4,31 +4,27 @@ import java.util.List;
 
 public class Umsatzberechner {
 
+    public double berechneUmsatz(List<Fahrzeug> fahrzeugList){
+        double sum = 0;
 
-    public double berechneGesamtumsatz(List<Fahrzeug> fahrzeuge) {
-        double gesamt = 0;
-
-        for (Fahrzeug f : fahrzeuge) {
-            for (Fahrt fahrt : f.getFahrten()) {
-                gesamt += f.rechneFahrt(fahrt);
+        for(Fahrzeug fz : fahrzeugList){
+            for(Fahrt f : fz.fahrtList){
+                sum += fz.berechnen(f);
             }
         }
-
-        return gesamt;
+        return sum;
     }
 
-    public double berechneElektroumsatz(List<Fahrzeug> fahrzeuge, List<Fahrt> fahrten) {
-        return berechneUmsatzNachTyp(fahrzeuge, fahrten, true);
-    }
-    private double berechneUmsatzNachTyp(List<Fahrzeug> fahrzeuge, List<Fahrt> fahrten, boolean nurElektro) {
-        double summe = 0.0;
-        for (int i = 0; i < fahrzeuge.size(); i++) {
-            Fahrzeug fzg = fahrzeuge.get(i);
-            if (nurElektro && !(fzg instanceof Elektrisch)) {
-                continue;
+    public double berechneElektroumsatz(List<Fahrzeug> fahrzeugList){
+        double sum = 0;
+
+        for(Fahrzeug fz : fahrzeugList){
+            if(fz instanceof ElektroVariant){
+                for(Fahrt f : fz.fahrtList){
+                    sum += fz.berechnen(f);
+                }
             }
-            summe += fzg.rechneFahrt(fahrten.get(i));
         }
-        return summe;
+        return sum;
     }
 }
