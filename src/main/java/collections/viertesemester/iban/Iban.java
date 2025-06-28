@@ -1,60 +1,62 @@
 package collections.viertesemester.iban;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Iban {
 
+    public void checkIban(String iban){
 
-    public boolean ibanCheck(String iban) throws FalscheIBANException {
         char[] array = iban.toCharArray();
 
-        if(array[0] != 'D' || array[1] != 'E'){
-            throw new FalscheIBANException(iban + " ist Falsche IBAN");
-        } else if (array.length != 22) {
-            throw new FalscheIBANException(iban + " содержит неправильное кол-во символов, а именно: ");
-        }
+        if(array[0] != 'D' || array[1] != 'E')
+            throw new FalscheIBANException("Falsche Iban");
 
-        return true;
+        else{
+            if(array.length != 21) throw new FalscheIBANException();
+        }
     }
 
-    public void ibanAusDateiLesen(String fileName) throws FalscheIBANException {
 
+    public List<String> liesIbanAusDatei(String dateiname) throws IOException {
+        List<String> ungultigeIbans = new ArrayList<>();
 
-        try {
-            BufferedReader bfr = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+        try (BufferedReader br = new BufferedReader(new FileReader(dateiname))) {
+            String zeile;
 
-            String v = bfr.readLine();
+            while ((zeile = br.readLine()) != null) {
+                String iban = zeile.trim();
 
-            while (v != null) {
-                ibanCheck(v);
-                v = bfr.readLine();
+                try {
+                    checkIban(iban);
+                } catch (FalscheIBANException e) {
+                    ungultigeIbans.add(iban);
+                }
             }
-
-            bfr.close();
-            System.out.println("Операция прошла успешно");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        catch (FileNotFoundException e) {
-                System.out.println("Datei " + fileName + " nicht gefunden");
-        }
-        catch (NullPointerException e) {
-            System.out.println("Datei " + fileName + "nicht gefunden");
-        }
-        catch (IOException e) {
-            System.out.println("Fehler beim Lesevorgang von Datei: " + fileName);
-        }
+        return ungultigeIbans;
     }
 
+    public Map<String, List<String>> liesIbanAusDatein(List<String> dateinamen) throws IOException {
 
-    public void dateienTest(String[] filenames) throws FalscheIBANException {
+        Map<String, List<String>> ergebnisse = new HashMap<>();
 
-
-
-        for(int i = 0; i < filenames.length; i++){
-            ibanAusDateiLesen(filenames[i]);
+        for(String dateiname : dateinamen){
+            List<String> ungultigeIbans = liesIbanAusDatei(dateiname);
+            if(!ungultigeIbans.isEmpty()){
+                ergebnisse.put(dateiname, ungultigeIbans);
+            }
         }
 
+        return ergebnisse;
 
     }
 }
-
