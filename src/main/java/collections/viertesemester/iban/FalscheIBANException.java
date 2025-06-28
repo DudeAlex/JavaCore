@@ -1,18 +1,13 @@
 package collections.viertesemester.iban;
 
-public class FalscheIBANException extends Exception{
-
-    String errorMessage;
-
+public class FalscheIBANException extends RuntimeException {
 
     public FalscheIBANException(){
-        this.errorMessage = "FEHLER: Datei enthält ungültige IBAN";
+        super("Ungultige IBAn");
     }
 
-    public FalscheIBANException(String errorMessage){
-        this.errorMessage = errorMessage;
+    public FalscheIBANException(String message){
+        super();
     }
-
-
 
 }

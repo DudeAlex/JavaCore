@@ -1,32 +1,38 @@
 package collections.viertesemester.musikstücksammlung;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class MusikStueckSammlung {
 
-    Map<String, MusikStueck> map = new HashMap<>();
+    HashMap<String, MusikStueck> sammlung;
+
+    public MusikStueckSammlung(){
+        sammlung = new HashMap<>();
+    }
 
     public void musikStueckEinfügen(MusikStueck neu){
 
-        if(map.containsKey(neu.titel)){
-            throw new IllegalArgumentException("Lied ist schon da");
-        }
+        if(sammlung.containsKey(neu.titel)) throw new IllegalArgumentException("Bereits exestiert");
 
-        map.put(neu.titel, neu);
+        sammlung.put(neu.titel, neu);
     }
 
-    public MusikStueck[] getAlleMusikStueckeNachTitel(){
+    public List<MusikStueck> getAlleMusikStueckeNachTitel(){
 
-        Collection<MusikStueck> werte = map.values();
+        List<MusikStueck> alleMusikStueckeNachTitel = new ArrayList<>(sammlung.values());
 
+        alleMusikStueckeNachTitel.sort(new VergleicheMusikStueckTitel());
 
-        List<MusikStueck> musikStueckList = new ArrayList<>(werte);
-
-
-        Collections.sort(musikStueckList, new VergleicheMusikStueckTitel());
-
-        return musikStueckList.toArray(new MusikStueck[0]);
+        return alleMusikStueckeNachTitel;
     }
 
+    public List<MusikStueck> getAlleMusikStueckeNachLaenge(){
 
+        List<MusikStueck> alleMusikStueckeNachLaenge = new ArrayList<>(sammlung.values());
+
+        alleMusikStueckeNachLaenge.sort(new VergleicheMusikStueckLaenge());
+        return alleMusikStueckeNachLaenge;
+    }
 }
